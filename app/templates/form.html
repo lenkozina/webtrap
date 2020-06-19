@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Журнал обращений к API</title>
+</head>
+<body>
+<form action="" method="post" name="searchlog">
+  {{ form.hidden_tag() }}
+  <table>
+    <tr>
+    {% for field in form if field.widget.input_type != 'hidden' %}
+      <td>
+        {{ field.name }}<br>
+        {{ field }}
+      </td>
+    {% endfor %}
+    <td>
+      <input type="submit" value="Search">
+    </td>
+    </tr>
+  </table>
+</form>
+Найдено {{ count }} записей <br>
+<table>
+  <thead>
+    <th>Дата/Время</th>
+    <th>Метод</th>
+    <th>Уровень</th>
+    <th>URL</th>
+    <th>Сообщение</th>
+  </thead>
+  <tbody>
+      {% for item in items %}
+      <tr>
+          <td>{{ item.creation_date }}</td>
+          <td>{{ item.method }}</td>
+          <td>{{ item.level }}</td>
+          <td>{{ item.path }}</td>
+          <td>{{ item.message }}</td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+</body>
+</html>
