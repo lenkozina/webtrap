@@ -22,7 +22,6 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('logger', sa.String(), nullable=True),
     sa.Column('level', sa.String(), nullable=True),
-    sa.Column('trace', sa.String(), nullable=True),
     sa.Column('message', sa.String(), nullable=True),
     sa.Column('path', sa.String(), nullable=True),
     sa.Column('method', sa.String(), nullable=True),

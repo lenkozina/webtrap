@@ -7,7 +7,6 @@ class Log(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     logger = db.Column(db.String)
     level = db.Column(db.String)
-    trace = db.Column(db.String)
     message = db.Column(db.String)
     path = db.Column(db.String)
     method = db.Column(db.String)
